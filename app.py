@@ -3,6 +3,8 @@ from flask_restful import Api
 
 from resources.article_resource import ArticlesResource, ArticleResource
 from resources.author_resource import AuthorsResource, AuthorResource
+from resources.subject_resource import SubjectsResource, SubjectResource
+from resources.student_resource import StudentsResource, StudentResource
 
 from utils.database import db
 
@@ -18,6 +20,11 @@ api.add_resource(ArticleResource, '/article/<string:title>')
 api.add_resource(ArticlesResource, '/articles')
 api.add_resource(AuthorResource, '/author/<string:name>')
 api.add_resource(AuthorsResource, '/authors')
+api.add_resource(SubjectsResource, '/subjects')
+api.add_resource(SubjectResource, '/subject/<string:subject>')
+api.add_resource(StudentsResource, '/students')
+api.add_resource(StudentResource, '/student/<string:name>')
+
 
 if __name__ == '__main__':
     db.init_app(app)
