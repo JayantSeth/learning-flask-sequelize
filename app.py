@@ -5,6 +5,8 @@ from resources.article_resource import ArticlesResource, ArticleResource
 from resources.author_resource import AuthorsResource, AuthorResource
 from resources.subject_resource import SubjectsResource, SubjectResource
 from resources.student_resource import StudentsResource, StudentResource
+from resources.lock_resource import LocksResource, LockResource
+from resources.key_resource import KeysResource, KeyResource
 
 from utils.database import db
 
@@ -24,6 +26,10 @@ api.add_resource(SubjectsResource, '/subjects')
 api.add_resource(SubjectResource, '/subject/<string:subject>')
 api.add_resource(StudentsResource, '/students')
 api.add_resource(StudentResource, '/student/<string:name>')
+api.add_resource(LocksResource, '/locks')
+api.add_resource(LockResource, '/lock/<string:lock_name>')
+api.add_resource(KeysResource, '/keys')
+api.add_resource(KeyResource, '/key/<string:key_name>')
 
 
 if __name__ == '__main__':
